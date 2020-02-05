@@ -1,11 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from "react"
+import ReactDOM from "react-dom"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+
+import "./theme/layout.css"
+
+//containers
+import LoginContainer from "./containers/login"
+import HomeContainer from "./containers/home"
 
 function App() {
     return (
-        <div>
-            <h1>Hello blog readers</h1>
-        </div>
+        <Router>
+            <Switch>
+                <Route path='/home'><HomeContainer /></Route>
+                <Route path='/'><LoginContainer /></Route>
+            </Switch>
+        </Router>
     );
 }
 
