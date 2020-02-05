@@ -2,6 +2,25 @@ import styled from "styled-components"
 
 import { Link } from "react-router-dom";
 
+const ContentWrapper = styled.div`
+    display: flex;
+    flex: 1 0 auto;
+`
+
+const Content = styled.div`
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #ebebeb;
+    padding: 40px 55px;
+    section{
+        flex: 1 0 auto;
+        background-color: #fafafa;
+        padding: 30px;
+        border-radius: 20px;
+    }
+`
+
 const Container = styled.div`
     width: 95%;
     max-width: 1200px;
@@ -31,6 +50,8 @@ const ButtonBlue = styled(Link)`
 `
 
 export {
+    ContentWrapper,
+    Content,
     Container,
     Rows,
     Row,

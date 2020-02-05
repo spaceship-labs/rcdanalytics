@@ -1,7 +1,8 @@
 import React from "react"
+import Layout from "../layout"
 
-const HomeContainer = () => <div className='home'>
+const HomeContainer = () => <Layout>
     <h1>Home Page</h1>
-</div>
+</Layout>
 
 export default HomeContainer
