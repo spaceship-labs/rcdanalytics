@@ -9,6 +9,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -38,6 +39,9 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
