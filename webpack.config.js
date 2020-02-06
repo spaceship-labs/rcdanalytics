@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackTemplate = require('html-webpack-template');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
   entry: './src/index.js',
@@ -50,6 +51,9 @@ const config = {
       template: HtmlWebpackTemplate,
       appMountId: 'app',
     }),
+    new CopyPlugin([
+      { from: '_redirects', to: './' }
+    ])
   ],
 };
 
