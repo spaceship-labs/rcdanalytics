@@ -7,7 +7,7 @@ const Header = styled.header`
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 25px 5%;
+    padding: 25px 35px;
     color: #fff;
 `
 
@@ -28,9 +28,11 @@ const Hamburguer = styled.button`
   background: transparent;
   border: 0 none;
   padding: 0;
+  outline: 0 none!important;
   span {
     display: block;
     border: 1px solid #184099;
+    width: 22px;
   }
 `
 

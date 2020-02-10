@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackTemplate = require('html-webpack-template');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
   entry: './src/index.js',
@@ -49,7 +50,11 @@ const config = {
       inject: false,
       template: HtmlWebpackTemplate,
       appMountId: 'app',
+      title: 'RCD Analytics'
     }),
+    new CopyPlugin([
+      { from: '_redirects', to: './' }
+    ])
   ],
 };
 
