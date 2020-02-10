@@ -6,8 +6,10 @@ const Header = styled(Container)`
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
     padding: 30px 0;
+    @media only screen and (max-width: 680px){
+        display: none;
+    }
 `
 
 const Rows = styled(RowsTheme)`

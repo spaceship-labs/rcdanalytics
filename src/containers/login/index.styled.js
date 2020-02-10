@@ -12,16 +12,26 @@ const LoginWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media only screen and (max-width: 680px){
+        background-size: 95% 100%, 100%;
+        padding: 80px 20px;
+    }
 `
 
 const Rows = styled(RowsTheme)`
     flex: 1 0 auto;
     align-items: start;
+    @media only screen and (max-width: 680px){
+        flex-direction: column;
+    }
 `
 
 const Row = styled(RowTheme)`
     flex: 0 1 50%;
     max-width: 50%;
+    @media only screen and (max-width: 680px){
+        max-width: 100%;
+    }
 `
 
 const LoginData = styled.div`
@@ -30,6 +40,9 @@ const LoginData = styled.div`
         color: #424242;
         line-height: 1.5;
         margin: 30px 0;
+    }
+    @media only screen and (max-width: 900px){
+        padding-right: 30px;
     }
 `
 

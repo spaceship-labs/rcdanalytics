@@ -3,9 +3,9 @@ import { Header, Row, Hamburguer, Logo } from "./index.styled"
 import LogoImg from "../../theme/images/rcd-analytics-white-small.png"
 import DropdownComponent from "../dropdown"
 
-const HeaderComponent = () => <Header>
+const HeaderComponent = ({ sidebarToggle, handleToggleSidebar }) => <Header>
     <Row>
-        <Hamburguer>
+        <Hamburguer open={sidebarToggle} onClick={handleToggleSidebar}>
             <span className="lineTop"></span>
             <span className="lineMiddle"></span>
             <span className="lineBottom"></span>
