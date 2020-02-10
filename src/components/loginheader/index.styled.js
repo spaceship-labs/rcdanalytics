@@ -7,6 +7,7 @@ const Header = styled(Container)`
     left: 0;
     right: 0;
     padding: 30px 0;
+    max-width: 1300px;
     @media only screen and (max-width: 680px){
         display: none;
     }
