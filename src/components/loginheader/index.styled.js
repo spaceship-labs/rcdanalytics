@@ -7,7 +7,7 @@ const Header = styled(Container)`
     left: 0;
     right: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 30px 0;
 `
 
 const Rows = styled(RowsTheme)`
@@ -26,9 +26,25 @@ const Menu = styled.ul`
     a{
         color: #fff;
         text-decoration: none;
-        padding: 20px 30px;
+        padding: 10px 30px;
         font-size: 16px;
         font-weight: 500;
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute; 
+            bottom: 5px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            width: 0px;
+            height: 3px;
+            transition: all .3s;
+            background-color: #184099;
+        }
+        &:hover:after{
+            width: 50%;
+        }
     }
 `
 

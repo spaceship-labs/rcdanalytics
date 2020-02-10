@@ -12,8 +12,16 @@ const DropdownAction = styled.button`
     color: #fff;
     font-size: 16px;
     font-weight: 500;
+    outline: 0 none!important;
+    cursor: pointer;
     img{
         margin-right: 10px;
+    }
+    span{
+        font-size: 12px;
+        padding: 3px 5px;
+        color: #36d7fb;
+        font-weight: 900;
     }
 `
 
@@ -25,6 +33,9 @@ const DropdownScreen = styled.div`
     border-radius: 10px;
     box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.08);
     width: 100%;
+    visibility: ${ ({ open }) => open ? 'visible' : 'hidden'};
+    opacity: ${ ({ open }) => open ? '1' : '0' };
+    transition: all .3s;
     &:before{
         content: '';
         position: absolute;

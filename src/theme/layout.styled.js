@@ -47,6 +47,11 @@ const ButtonBlue = styled(Link)`
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
+    border: 2px solid #fff;
+    transition: all .3s;
+    &:hover{
+        background: linear-gradient(to right, rgba(54,215,251,1) 0%, rgba(47,124,239,1) 100%);;
+    }
 `
 
 export {

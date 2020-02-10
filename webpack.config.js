@@ -50,6 +50,7 @@ const config = {
       inject: false,
       template: HtmlWebpackTemplate,
       appMountId: 'app',
+      title: 'RCD Analytics'
     }),
     new CopyPlugin([
       { from: '_redirects', to: './' }
