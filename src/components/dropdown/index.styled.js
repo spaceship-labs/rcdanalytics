@@ -14,6 +14,7 @@ const DropdownAction = styled.button`
     font-weight: 500;
     outline: 0 none!important;
     cursor: pointer;
+    padding: 0;
     img{
         margin-right: 10px;
     }
@@ -22,6 +23,11 @@ const DropdownAction = styled.button`
         padding: 3px 5px;
         color: #36d7fb;
         font-weight: 900;
+    }
+    @media only screen and (max-width: 510px){
+        .username{
+            display: none;
+        }
     }
 `
 

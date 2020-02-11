@@ -6,10 +6,14 @@ const SidebarWrapper = styled.div`
 `
 
 const SidebarScreen = styled.div`
-    width: 300px;
+    width: ${({ open }) => open === true ? '300px' : '0' };
+    overflow: hidden;
+    transition: width .3s;
 `
 
-const Sidebar = styled.div``
+const Sidebar = styled.div`
+    width: 300px;
+`
 
 export {
     SidebarWrapper,

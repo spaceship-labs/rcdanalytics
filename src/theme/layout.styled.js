@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const ContentWrapper = styled.div`
     display: flex;
     flex: 1 0 auto;
+    overflow: hidden;
 `
 
 const Content = styled.div`
@@ -14,10 +15,18 @@ const Content = styled.div`
     background-color: #ebebeb;
     padding: 40px 55px;
     section{
+        min-width: 400px;
         flex: 1 0 auto;
         background-color: #fafafa;
         padding: 30px;
         border-radius: 20px;
+        box-sizing: border-box;
+        @media only screen and (max-width: 550px){
+            min-width: 250px;
+        }
+    }
+    @media only screen and (max-width: 550px){
+        padding: 30px 20px;
     }
 `
 

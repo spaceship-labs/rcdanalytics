@@ -2,17 +2,20 @@ import styled from "styled-components"
 import { Row as RowLayout } from "../../theme/layout.styled"
 
 const Header = styled.header`
-    background-image: linear-gradient(to right, #36d7fb, #2f7cef, #184099);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 25px 35px;
-    color: #fff;
+  background-image: linear-gradient(to right, #36d7fb, #2f7cef, #184099);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 25px 35px;
+  color: #fff;
+  @media only screen and (max-width: 510px){
+    padding: 15px 20px;
+  }
 `
 
 const Row = styled(RowLayout)`
-    flex: 0 1 auto;
+  flex: 0 1 auto;
 `
 
 const Hamburguer = styled.button`
@@ -34,10 +37,13 @@ const Hamburguer = styled.button`
     border: 1px solid #184099;
     width: 22px;
   }
+  @media only screen and (max-width: 510px){
+    margin-right: 10px;
+  }
 `
 
 const Logo = styled.a`
-    display: inline-block;
+  display: inline-block;
 `
 
 export {

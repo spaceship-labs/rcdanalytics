@@ -11,7 +11,7 @@ const DropdownComponent = () => {
     }
     return (<DropdownWrap>
         <DropdownAction onClick={handleClick}>
-            <img src={img} /> Mauricio Herrera <span className='icon-arrow' />
+            <img src={img} /> <span className='username'>Mauricio Herrera</span> <span className='icon-arrow' />
         </DropdownAction>
         <DropdownScreen open={toggle}>
             <ul>
