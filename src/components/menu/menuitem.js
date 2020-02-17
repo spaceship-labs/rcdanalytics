@@ -1,7 +1,11 @@
 import React from "react"
-import { MenuItem, MenuItemLink } from "./index.styled"
+import { MenuItem, MenuItemLink, Tooltip } from "./index.styled"
 
 const MenuItemComponent = ({ item, level, hadleClick }) => {
+    const tooltip = item.description ? <Tooltip>
+        <h5>{item.title}</h5>
+        <p>{item.description}</p>
+    </Tooltip> : ""
     if (item.ref) {
         return <MenuItem onClick={hadleClick} level={level} active={item.active}>
             {item.icon && <span className={`icon-${item.icon}`} />}
