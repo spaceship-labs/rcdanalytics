@@ -1,5 +1,4 @@
 import styled from "styled-components"
-
 import { Link } from "react-router-dom";
 
 const ContentWrapper = styled.div`
@@ -40,12 +39,13 @@ const Container = styled.div`
 const Rows = styled.div`
     display: flex;
     flex-direction: row;
-    ${ ({ verticalAlign }) => `align-items:${verticalAlign ? 'center':'stat'};` }
+    ${ ({ align }) => `justify-content:${align ? align : 'start'};` }
+    ${ ({ verticalAlign }) => `align-items:${verticalAlign ? 'center':'start'};` }
 `
 
 const Row = styled.div``
 
-const ButtonBlue = styled(Link)`
+const ButtonBlue = styled.button`
     border: 0 none;
     background: linear-gradient(to right, rgba(54,215,251,1) 0%, rgba(47,124,239,1) 50%, rgba(24,65,153,1) 100%);
     color: #fff;
@@ -58,6 +58,7 @@ const ButtonBlue = styled(Link)`
     font-weight: 500;
     border: 2px solid #fff;
     transition: all .3s;
+    cursor: pointer;
     &:hover{
         background: linear-gradient(to right, rgba(54,215,251,1) 0%, rgba(47,124,239,1) 100%);;
     }

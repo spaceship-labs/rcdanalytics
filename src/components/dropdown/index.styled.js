@@ -23,6 +23,9 @@ const DropdownAction = styled.button`
         padding: 3px 5px;
         color: #36d7fb;
         font-weight: 900;
+        &.username{
+            color: #fff;
+        }
     }
     @media only screen and (max-width: 510px){
         .username{

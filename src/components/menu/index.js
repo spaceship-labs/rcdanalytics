@@ -23,9 +23,9 @@ const MenuComponent = () => {
                     ref: useRef(null),
                     h: 0,
                     items: {
-                        'dashboard': { title: 'Dashboard', link: '/home', active: false, h: 0, },
-                        'daily': { title: 'Daily', link: '/home', active: false, h: 0, },
-                        'kpikpo': { title: 'KPI / KPO', link: '/home', active: false, h: 0, },
+                        'dashboard': { title: 'Dashboard', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor."},
+                        'daily': { title: 'Daily', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor." },
+                        'kpikpo': { title: 'KPI / KPO', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor." },
                     }
                 },
                 'club': {
@@ -72,7 +72,7 @@ const MenuComponent = () => {
     })
     
     useEffect(() => {
-        console.log( menu )
+        //console.log( menu )
     })
 
     const hadleClick = (item, subitem, level, key, subkey) => {

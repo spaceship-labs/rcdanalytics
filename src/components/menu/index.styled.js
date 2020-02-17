@@ -13,12 +13,14 @@ const MenuDropdown = styled.div`
     transition: all .3s;
     height: ${({active, h}) => active === true ? `${h}px` : '0' };
     overflow: hidden;
+    overflow-x: visible;
+    overflow-y: hidden;
 `
 
 const MenuItemSizes = {
     '1': `
         font-size: 16px;
-        font-weight: 900;
+        font-weight: bold;
     `,
     '2': `
         font-size: 16px;
@@ -53,6 +55,7 @@ const activeMenuItem = {
 const MenuItemRules = ({level,active}) => `
     display: block;
     width: 100%;
+    box-sizing: border-box;
     padding: 15px 20px 15px 30px;
     color: #929292;
     border: 0 none;
@@ -61,7 +64,8 @@ const MenuItemRules = ({level,active}) => `
     border-bottom: 1px solid #ebebeb;
     text-decoration: none;
     cursor: pointer;
-    font-weight: 900;
+    font-weight: 500;
+    position: relative;
     ${ MenuItemSizes[level]}
     ${ active === true ? activeMenuItem[level] : ''}
     span{
@@ -84,9 +88,26 @@ const MenuItem = styled.button`
     ${ props => MenuItemRules(props) }
 `
 
+const Tooltip = styled.div`
+    position: absolute;
+    left: 100%;
+    margin-left: -15px;
+    background-color: #fff;
+    box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    color: #929292;
+    h5{
+        font-size: 15px;
+    }
+    p{
+        font-size: 12px;
+    }
+`
+
 export {
     Menu,
     MenuDropdown,
     MenuItem,
-    MenuItemLink
+    MenuItemLink,
+    Tooltip
 }
