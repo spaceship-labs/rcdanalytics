@@ -5,10 +5,11 @@ const Menu = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 300px;
 `
 
 const MenuDropdown = styled.div`
-    position: relative;
+    
     width: 100%;
     transition: all .3s;
     height: ${({active, h}) => active === true ? `${h}px` : '0' };
