@@ -2,7 +2,7 @@ import React, { Fragment, useRef, useState, useEffect } from "react"
 import { Menu, MenuDropdown } from "./index.styled"
 import MenuItemComponent from "./menuitem"
 
-const MenuComponent = () => {
+const MenuComponent = ({ handleOnMouseOver, handleOnMouseLeave }) => {
 
     const [menu, setMenu] = useState({
         'scorecard': {
@@ -34,9 +34,9 @@ const MenuComponent = () => {
                     ref: useRef(null),
                     h: 0,
                     items: {
-                        'dashboard': { title: 'Dashboard', link: '/home', active: false, h: 0, },
-                        'daily': { title: 'Daily', link: '/home', active: false, h: 0, },
-                        'kpikpo': { title: 'KPI / KPO', link: '/home', active: false, h: 0, },
+                        'dashboard': { title: 'Dashboard', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor." },
+                        'daily': { title: 'Daily', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor." },
+                        'kpikpo': { title: 'KPI / KPO', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor." },
                     }
                 },
                 'tours': {
@@ -56,9 +56,9 @@ const MenuComponent = () => {
                     ref: useRef(null),
                     h: 0,
                     items: {
-                        'dashboard': { title: 'Dashboard', link: '/home', active: false, h: 0, },
-                        'daily': { title: 'Daily', link: '/home', active: false, h: 0, },
-                        'kpikpo': { title: 'KPI / KPO', link: '/home', active: false, h: 0, },
+                        'dashboard': { title: 'Dashboard', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor." },
+                        'daily': { title: 'Daily', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor." },
+                        'kpikpo': { title: 'KPI / KPO', link: '/home', active: false, h: 0, description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor." },
                     }
                 },
             }
@@ -70,14 +70,14 @@ const MenuComponent = () => {
             h: 0,
         },
     })
-    
+
     useEffect(() => {
         //console.log( menu )
     })
 
     const hadleClick = (item, subitem, level, key, subkey) => {
         const newMenu = {...menu}
-        console.log('REF', item.ref.current.clientHeight)
+        //console.log('REF', item.ref.current.clientHeight)
         if (level === '1') {
             const newActive = !item.active
             newMenu[key] = { ...item, active: newActive, h: item.ref.current.clientHeight }
@@ -98,20 +98,31 @@ const MenuComponent = () => {
             {Object.keys(menu).map((itemKey, index) => {
                 const item = menu[ itemKey ]
                 return <li key={`li-1-${index}`}>
-                    <MenuItemComponent hadleClick={()=>hadleClick(item,null,'1',itemKey,null)} item={item} level='1' />
+                    <MenuItemComponent
+                        hadleClick={() => hadleClick(item, null, '1', itemKey, null)}
+                        handleOnMouseOver={handleOnMouseOver}
+                        handleOnMouseLeave={handleOnMouseLeave}
+                        item={item} level='1' />
                     {
                         item.items &&
                         <MenuDropdown h={item.h} active={item.active}><Menu ref={item.ref} level="2">{Object.keys(item.items).map((subitemkey, subindex) => {
                             const subitem = item.items[ subitemkey ]
                             return <li key={`li-2-${subindex}`}>
-                                <MenuItemComponent hadleClick={() => hadleClick(item, subitem, '2', itemKey, subitemkey)} item={subitem} level='2' />
+                                <MenuItemComponent
+                                    hadleClick={() => hadleClick(item, subitem, '2', itemKey, subitemkey)}
+                                    handleOnMouseOver={handleOnMouseOver}
+                                    handleOnMouseLeave={handleOnMouseLeave}
+                                    item={subitem} level='2' />
                                 {
                                     subitem.items &&
                                     <MenuDropdown h={subitem.h} active={subitem.active}><Menu ref={subitem.ref} level="3">{
                                         Object.keys(subitem.items).map((subsubitemkey, subsubindex) => {
                                             const subsubitem = subitem.items[subsubitemkey]
                                             return <li key={`li-3-${subsubindex}`}>
-                                                <MenuItemComponent item={subsubitem} level='3' />
+                                                <MenuItemComponent
+                                                    handleOnMouseOver={handleOnMouseOver}
+                                                    handleOnMouseLeave={handleOnMouseLeave}
+                                                    item={subsubitem} level='3' />
                                             </li>
                                         } )
                                     }</Menu></MenuDropdown>
@@ -123,6 +134,7 @@ const MenuComponent = () => {
                 </li>
             } )}
         </Menu>
+        
     </Fragment>)
 }
 
