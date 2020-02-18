@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom";
+import pwsImg from "../../theme/images/pws.png"
+import usrImg from "../../theme/images/usr.png"
 
 const ModalWrapper = styled.div`
     position: fixed;
@@ -54,7 +56,15 @@ const Form = styled.form`
         border: 0 none;
         background-color: #ebebeb;
         border-radius: 10px;
-        padding: 14px 18px;
+        padding: 14px 18px 14px 45px;
+        background-position: 15px 11px;
+        background-repeat: no-repeat;
+    }
+    input.usr{
+        background-image: url(${usrImg});
+    }
+    input.pws{
+        background-image: url(${pwsImg});
     }
     p{
         margin: 20px 0;

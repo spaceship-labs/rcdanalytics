@@ -86,7 +86,18 @@ const MenuComponent = ({ handleOnMouseOver, handleOnMouseLeave }) => {
             const newActive = !subitem.active
             const subH = subitem.ref.current.clientHeight
             const h = item.ref.current.clientHeight
-            newMenu[key] = { ...item, h: newActive === true ? h + subH : h }
+            let flag = false
+            Object.keys(newMenu[key].items).map(mapSubKey => {
+                if (mapSubKey !== subkey) {
+                    if (newMenu[key].items[mapSubKey].active === true){
+                        flag = true
+                        newMenu[key].items[mapSubKey].active = false
+                    }
+                }
+            } )
+            console.log('H', h, subH)
+            const newH = newActive === true ? h + (flag===true?0:subH) : h - subH
+            newMenu[key] = { ...item, h: newH }
             newMenu[key].items[subkey] = { ...subitem, active: newActive, h: subH }
         }
 
