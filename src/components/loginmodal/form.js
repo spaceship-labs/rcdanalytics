@@ -6,10 +6,10 @@ import { Link } from "react-router-dom"
 const LoginFormComponent = () => <Form>
     <h3>Sign in</h3>
     <p>
-        <input type='text' name='username' placeholder="Username" />
+        <input className='usr' type='text' name='username' placeholder="Username" />
     </p>
     <p>
-        <input type='password' name='password' placeholder="Password" />
+        <input className='pws' type='password' name='password' placeholder="Password" />
     </p>
     <p><ButtonBlue to='/home'>LOGIN</ButtonBlue></p>
     <Rows align='space-between'>

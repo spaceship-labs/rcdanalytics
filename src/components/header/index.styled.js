@@ -2,12 +2,12 @@ import styled from "styled-components"
 import { Row as RowLayout } from "../../theme/layout.styled"
 
 const Header = styled.header`
-  background-image: linear-gradient(to right, #36d7fb, #2f7cef, #184099);
+  background-image: linear-gradient(to left, #36d7fb, #2f7cef, #184099);
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 25px 35px;
+  padding: 12px 35px;
   color: #fff;
   @media only screen and (max-width: 510px){
     padding: 15px 20px;
