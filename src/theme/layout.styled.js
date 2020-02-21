@@ -11,14 +11,11 @@ const Content = styled.div`
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: #ebebeb;
-    padding: 40px 55px;
     section{
         min-width: 400px;
         flex: 1 0 auto;
-        background-color: #fafafa;
+        background-color: #fff;
         padding: 30px;
-        border-radius: 20px;
         box-sizing: border-box;
         @media only screen and (max-width: 550px){
             min-width: 250px;
