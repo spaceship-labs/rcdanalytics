@@ -34,7 +34,7 @@ const Hamburguer = styled.button`
   outline: 0 none!important;
   span {
     display: block;
-    border: 1px solid #184099;
+    border: 1px solid #fff;
     width: 22px;
   }
   @media only screen and (max-width: 510px){

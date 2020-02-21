@@ -21,7 +21,7 @@ const DropdownAction = styled.button`
     span{
         font-size: 12px;
         padding: 3px 5px;
-        color: #36d7fb;
+        color: #184099;
         font-weight: 900;
         &.username{
             color: #fff;
