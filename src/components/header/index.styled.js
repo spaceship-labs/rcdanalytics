@@ -7,7 +7,7 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 12px 35px;
+  padding: 10px 11px;
   color: #fff;
   @media only screen and (max-width: 510px){
     padding: 15px 20px;

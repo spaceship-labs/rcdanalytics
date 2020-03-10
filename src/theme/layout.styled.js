@@ -17,13 +17,16 @@ const Content = styled.div`
         background-color: #fff;
         padding: 30px;
         box-sizing: border-box;
+        overflow: auto;
+        max-width: 100%;
         @media only screen and (max-width: 550px){
-            min-width: 250px;
+            min-width: auto;
+            padding: 15px;
         }
     }
-    @media only screen and (max-width: 550px){
-        padding: 30px 20px;
-    }
+  @media only screen and (max-width: 550px){
+    flex:1;
+  }
 `
 
 const Container = styled.div`

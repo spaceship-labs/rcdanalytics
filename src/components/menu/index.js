@@ -2,7 +2,7 @@ import React, { Fragment, useRef, useState, useEffect } from "react"
 import { Menu, MenuDropdown } from "./index.styled"
 import MenuItemComponent from "./menuitem"
 
-const MenuComponent = ({ handleOnMouseOver, handleOnMouseLeave }) => {
+const MenuComponent = ({ handleOnMouseOver, handleOnMouseLeave, sidebarToggle, handleToggleSidebar }) => {
 
     const [menu, setMenu] = useState({
         'scorecard': {
@@ -64,20 +64,21 @@ const MenuComponent = ({ handleOnMouseOver, handleOnMouseLeave }) => {
             }
         },
         'area': {
-            icon: 'area', title: 'Areas', link: '/home',
-            active: false,
-            ref: false,
-            h: 0,
+          icon: 'area', title: 'Areas', link: '/home',
+          active: false,
+          ref: false,
+          h: 0,
         },
     })
 
     useEffect(() => {
-        //console.log( menu )
+      //console.log( menu )
     })
 
     const hadleClick = (item, subitem, level, key, subkey) => {
-        const newMenu = {...menu}
-        //console.log('REF', item.ref.current.clientHeight)
+      const newMenu = {...menu}
+      //console.log('REF', item.ref.current.clientHeight)
+      if( !sidebarToggle ) handleToggleSidebar()
         if (level === '1') {
             const newActive = !item.active
             newMenu[key] = { ...item, active: newActive, h: item.ref.current.clientHeight }

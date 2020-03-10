@@ -17,6 +17,7 @@ const DropdownAction = styled.button`
     padding: 0;
     img{
         margin-right: 10px;
+        width: 28px;
     }
     span{
         font-size: 12px;
