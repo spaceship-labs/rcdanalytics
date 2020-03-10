@@ -5,7 +5,7 @@ const Menu = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 300px;
+    width: 240px;
 `
 
 const MenuDropdown = styled.div`
@@ -20,18 +20,18 @@ const MenuDropdown = styled.div`
 
 const MenuItemSizes = {
     '1': `
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
     `,
     '2': `
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
-        padding-left: 70px;
+        padding-left: 44px;
     `,
     '3': `
         font-size: 14px;
         font-weight: 500;
-        padding-left: 110px;
+        padding-left: 70px;
         background-color: #e6e6e6;
     `,
 }
@@ -57,7 +57,7 @@ const MenuItemRules = ({level,active}) => `
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 15px 20px 15px 30px;
+    padding: 15px 10px 15px 12px;
     color: #929292;
     border: 0 none;
     text-align: left;
@@ -71,13 +71,14 @@ const MenuItemRules = ({level,active}) => `
     ${ active === true ? activeMenuItem[level] : ''}
     span{
         display: inline-block;
-        margin-right: 8px;
+        margin-right: 18px;
     }
     .icon-arrow{
         float: right;
         font-size: 10px;
         padding: 5px 0;
         transform: rotate( ${ active === true ? '180deg' : '0' } );
+        margin-right: 0;
     }
 `
 

@@ -10,9 +10,9 @@ const SidebarScreen = styled.div`
 `
 
 const Sidebar = styled.div`
-    width: 300px;
+    width: 240px;
     position: relative;
-    width: ${({ open }) => open === true ? '300px' : '0' };
+    width: ${({ open }) => open === true ? '240px' : '48px' };
     overflow: hidden;
     transition: width .3s;
 `
